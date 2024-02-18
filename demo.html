@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Nhập số việc tốt bên phải, số việc xấu bên trái </p>
+
+<input id="nhapSo1" type="number" value="0" oninput="tinhTong()">
+<input id="nhapSo2" type="number" value="0" oninput="tinhTong()">
+<p>Tổng số việc là </p>
+ <p id="ketQua"> 0 </p>
+
+<button onclick="tangSotot()">Tăng số tốt</button>
+
+<button onclick="tangSoxau()">Tăng số xấu</button>
+
+<script>
+function tinhTong() {
+  var so1 = document.getElementById("nhapSo1").value;
+  var so2 = document.getElementById("nhapSo2").value;
+  var tong = Number(so1) - Number(so2);
+  document.getElementById("ketQua").innerHTML = tong;
+
+}
+function tangSotot() {
+  var so = document.getElementById("nhapSo1").value;
+  so++;
+//   document.getElementById("so").innerHTML = so;
+  document.getElementById("nhapSo1").value = so;
+  tinhTong();
+}
+function tangSoxau() {
+  var so = document.getElementById("nhapSo2").value;
+  so++;
+//   document.getElementById("so").innerHTML = so;
+  document.getElementById("nhapSo2").value = so;
+  tinhTong();
+}
+</script>
+
+</body>
+</html>
+
